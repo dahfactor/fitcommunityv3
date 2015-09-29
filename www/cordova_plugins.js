@@ -1,4 +1,3 @@
-/*
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
@@ -30,4 +29,4 @@ module.exports.metadata =
     "org.apache.cordova.dialogs": "0.3.0"
 }
 // BOTTOM OF METADATA
-});*/
+});
