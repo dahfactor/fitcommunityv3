@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+
+    <link href="css/themes/2/bookit.min.css" rel="stylesheet" />
+    <link href="css/themes/2/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="lib/jqm/1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+	<link rel="stylesheet" type="text/css" href="css/jqm-icon-pack-fa.css" />
+    <title>FitCommunity</title>
+	<style>
+		.button-fit:focus {
+			-moz-box-shadow: inset 0 0 3px red  , 0 0 9px red !important;
+			-webkit-box-shadow: inset 0 0 3px red  , 0 0 9px red !important;
+			box-shadow: inset 0 0 3px red  , 0 0 9px red !important;
+		}
+	</style>
+</head>
+<body>
+	<!-- Index -->
+	<div data-role="page" data-theme="b" id="page-index">
+		<div data-role="content" role="main" class="ui-content">
+			<img src="img/logo.png" class="logo" />
+			<div class="content-primary">
+				<a href="#page-signin" class="ui-btn ui-btn-b button-fit ui-corner-all" style="background-color: black;">SIGN IN</a>
+				<a href="#page-signup" class="ui-btn ui-btn-b button-fit ui-corner-all" style="background-color: black;">CREATE ACCOUNT</a>
+			</div>
+		</div>
+    </div>
+	<!-- End of Index -->
+	
+	<!-- Sign in Screen -->
+    <div data-role="page" id="page-signin">
+        <div data-role="header" data-position="fixed" class="font-bold bi-header" data-theme="b" style="background-color: white; border-color: white;">
+			<a href="#page-index" class="font-thin button-fit" data-icon="back" style="background-color: black;">Back</a>
+			<h1></h1>
+		</div>
+        <div role="main" class="ui-content" data-role="content">
+			<img src="img/logo.png" class="logo2" /><br/></br></br>
+			<form id="form1">
+				<div id="ctn-err" class="bi-invisible"></div>
+				<div data-role="fieldcontainer">
+					<center><label for="email" class="font-bold">Email Address</label></center>
+					<input type="email" name="email" style="text-align:center;" id="email" value="" class="font-bold">
+				</div>
+				<div data-role="fieldcontainer">
+					<center><label for="password" class="font-bold">Password</label></center>
+					<input type="password" name="password" style="text-align:center;" id="password" value="" class="font-bold">
+				</div>
+				<div class="content-primary3">
+					<button type="submit" name="submit" value="submit" id="btn-submit" class="button-fit btn-fit1" data-theme="b" data-icon="check" style="background-color: black;">Sign in</button>
+				</div>
+			</form>	
+        </div>
+    </div>
+	<!-- End of Sign in Screen -->
+	
+	<!-- Registration Option -->
+    <div data-role="page" id="page-signup">
+        <div data-role="header" data-position="fixed" class="font-bold bi-header" data-theme="b" style="background-color: white; border-color: white;">
+			<a href="#page-index" class="font-thin button-fit" data-icon="back" style="background-color: black;">Back</a>
+			<h1></h1>
+		</div>
+		<div role="main" class="ui-content" data-role="content">
+			<img src="img/logo.png" class="logo2" />
+			<div class="content-primary2">
+				<a data-theme="b" href="#page-signup-email" class="ui-btn ui-btn-b button-fit btn-fit1" style="background-color: black;">Register with Email</a>
+				<a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" style="background-color: #4a6998;color: white;text-shadow: 0 0px 0 #f3f3f3;" data-role="button" data-icon="facebook" class="ui-link ui-btn ui-icon-facebook ui-btn-icon-left ui-shadow ui-corner-all button-fit btn-fit2" role="button">Register using Facebook</a>
+			</div>
+		</div>
+		
+		<!-- Temporary Register using FB Screen Message -->
+		<div data-role="popup" class="font-bold" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
+			<div role="main" class="ui-content">
+				<h3 class="mc-text-danger">Coming Soon</h3>
+				<p>Registration using Facebook is still under construction</p>
+				<div class="mc-text-center"><a href="#" data-rel="back" style="background-color: #4a6998;" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+			</div>
+		</div>
+		<!-- End of Temporary Register using FB Screen Message -->
+		
+    </div>
+	<!-- End of Registration Options -->
+	
+	<!-- Register using Email Screen -->
+	<div data-role="page" id="page-signup-email">
+        <div data-role="header" data-position="fixed" class="font-bold bi-header" data-theme="b" style="background-color: white; border-color: white;">
+			<a href="#page-signup" class="font-thin button-fit" data-icon="back" style="background-color: black;">Back</a>
+			<h1></h1>
+		</div>
+		<div role="main" class="ui-content" data-role="content">
+			<img src="img/logo.png" class="logo3" /><br/><br/>
+			<div id="ctn-err" class="bi-invisible"></div><br/>
+			<div data-role="fieldcontainer">
+				<center><label for="name" class="font-bold">Complete Name</label></center>
+				<input type="text" name="name" style="text-align:center;" id="name" value="" class="font-bold"/>
+			</div><br/>
+			<div data-role="fieldcontainer">
+				<center><label for="age" class="font-bold">Age</label></center>
+				<input type="number" name="age" style="text-align:center;" id="age" value="" class="font-bold"/>
+			</div>
+			<br/>
+			<div data-role="fieldcontainer">
+				<center><label for="gender" class="font-bold">Gender</label></center>
+				<select class="font-bold" name="gender" style="text-align:center;" id="gender" data-native-menu="false">
+					<option selected value="male">Male</option>
+					<option value="female">Female</option>
+				</select>
+			</div>
+			<br/>
+			<div data-role="fieldcontainer">
+				<center><label for="email" class="font-bold">Email Address</label></center>
+				<input type="email" name="email" style="text-align:center;" id="email" value="" class="font-bold">
+			</div>
+			<br/>
+			<div data-role="fieldcontainer">
+				<center><label for="password" class="font-bold">Password</label></center>
+				<input type="password" name="password" style="text-align:center;" id="password" value="" class="font-bold">
+			</div>
+			<br/>
+			<div data-role="fieldcontainer">
+				<center><label for="password1" class="font-bold">Confirm Password</label></center>
+				<input type="password" name="password1" style="text-align:center;" id="password1" value="" class="font-bold">
+			</div>
+			<div class="content-primary3">
+				<button type="submit" name="submit" value="submit" id="btn-submit" class="button-fit btn-fit1" data-theme="b" data-icon="check" style="background-color: black;">Register</button>
+			</div>
+		</div>
+    </div>
+	<!-- End of Register using Email screen -->
+	
+	<div data-role="page" class="font-bold" id="page-signup-succeeded">
+		<div data-role="content" role="main" class="ui-content">
+			<img src="img/logo.png" class="logo" /></br></br>
+			<div class="content-primary3">
+				<h2 class="mc-text-center" style="color:black;">Registration Succeeded</h2>
+				<p class="mc-top-margin-1-5 mc-text-center" style="color:red;">Congratulations!  You are now registered with FitCommunity.</p></br>
+				<a data-theme="b" href="#page-signin" class="ui-btn ui-btn-b ui-corner-all button-fit" style="background-color: black;">Sign In</a>
+			</div>
+		</div>
+    </div>
+	
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="lib/fastclick/fastclick.min.js"></script>
+    <script src="lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
+    <script src="js/api-messages.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/signup-controller.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="lib/jqm/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>

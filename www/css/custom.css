@@ -1,0 +1,85 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    margin:0px;
+    padding:0px;
+}
+
+.ui-page, .ui-body-c, .ui-page-active
+{
+    background: transparent !important;
+}
+
+@font-face {
+   font-family: ZonaPro-Bold;
+   src: url(ZonaPro-Bold.otf);
+}
+
+@font-face {
+   font-family: ZonaPro-Thin;
+   src: url(ZonaPro-Thin.otf);
+}
+
+body, .ui-overlay-c {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background: url('../img/intro.png') repeat center bottom !important;
+    background-attachment:fixed !important;
+    background-size:100% 100% !important;
+    height:100%;
+	width:100%;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.button-fit{
+	border-radius: 5px;
+	font-family: ZonaPro-Thin;
+}
+
+.font-bold{
+	font-family: ZonaPro-Bold;
+}
+
+.font-thin{
+	font-family: ZonaPro-Thin;
+}
+
+/* portrait */
+@media screen and (orientation:portrait) {
+	/* index.html */
+	.content-primary{margin-top: 200px;}
+	.logo{margin-top:75px;width: 100%;}
+	
+	/* register.html */
+	.content-primary2{margin-top: 140px;}
+	.logo2{margin-top:60px;width: 100%;}
+	
+	/* register_with_email.html */
+	.content-primary3{margin-top: 30px;}
+	.logo3{margin-top:10px;width: 100%;}
+}
+/* landscape */
+@media screen and (orientation:landscape) {
+	/* index.html */
+	.content-primary{margin-top: 50px;}
+	.logo{margin-top:25px;width: 100%;}
+	
+	/* register.html */
+	.content-primary2{margin-top: 10px;}
+	.logo2{margin-top:25px;width: 100%;}
+	
+	/* register_with_email.html */
+	.content-primary3{margin-top: 30px;}
+	.logo3{margin-top:10px;width: 100%;}
+}

@@ -1,1 +1,0 @@
-# fitcommunityv3
