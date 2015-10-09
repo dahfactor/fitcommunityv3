@@ -41,20 +41,18 @@
 		</div>
         <div role="main" class="ui-content" data-role="content">
 			<img src="img/logo.png" class="logo2" /><br/></br></br>
-			<form id="form1">
-				<div id="ctn-err" class="bi-invisible"></div>
-				<div data-role="fieldcontainer">
-					<center><label for="email" class="font-bold">Email Address</label></center>
-					<input type="email" name="email" style="text-align:center;" id="email" value="" class="font-bold">
-				</div>
-				<div data-role="fieldcontainer">
-					<center><label for="password" class="font-bold">Password</label></center>
-					<input type="password" name="password" style="text-align:center;" id="password" value="" class="font-bold">
-				</div>
-				<div class="content-primary3">
-					<button type="submit" name="submit" value="submit" id="btn-submit" class="button-fit btn-fit1" data-theme="b" data-icon="check" style="background-color: black;">Sign in</button>
-				</div>
-			</form>	
+			<div id="ctn-err-signin" class="bi-invisible"></div><br/>
+			<div data-role="fieldcontainer">
+				<center><label for="email" class="font-bold">Email Address</label></center>
+				<input type="email" name="email_signin" style="text-align:center;" id="email-signin" value="" class="font-bold">
+			</div>
+			<div data-role="fieldcontainer">
+				<center><label for="password" class="font-bold">Password</label></center>
+				<input type="password" name="password_signin" style="text-align:center;" id="password-signin" value="" class="font-bold">
+			</div>
+			<div class="content-primary3">
+				<button type="submit" name="submit" value="submit" id="btn-submit-signin" class="button-fit btn-fit1" data-theme="b" data-icon="check" style="background-color: black;">Sign in</button>
+			</div>
         </div>
     </div>
 	<!-- End of Sign in Screen -->
@@ -144,12 +142,11 @@
 		</div>
     </div>
 	
-   <!-- <script type="text/javascript" src="cordova.js"></script>-->
     <script src="lib/fastclick/fastclick.min.js"></script>
     <script src="lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
-    <script src="js/api-messages.js"></script>
     <script src="js/settings.js"></script>
     <script src="js/signup-controller.js"></script>
+	<script src="js/signin-controller.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script src="lib/jqm/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </body>

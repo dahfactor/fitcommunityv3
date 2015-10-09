@@ -36,6 +36,8 @@ $(document).on("mobileinit", function (event, ui) {
 });
 
 app.signupController = new BookIt.SignUpController();
+app.signinController = new BookIt.SignInController();
+
 
 //$(document).delegate("#page-signup", "pagebeforeshow", function () {
 //    // Reset the signup form.
@@ -49,6 +51,10 @@ $(document).on("pagecontainerbeforeshow", function (event, ui) {
                 // Reset the signup form.
                 app.signupController.resetSignUpForm();
                 break;
+			case "page-signin":
+                // Reset the signin form.
+                app.signinController.resetSignInForm();
+                break;
         }
     }
 });
@@ -59,6 +65,16 @@ $(document).delegate("#page-signup-email", "pagebeforecreate", function () {
 
     app.signupController.$btnSubmit.off("tap").on("tap", function () {
         app.signupController.onSignupCommand();
+    });
+
+});
+
+$(document).delegate("#page-signin", "pagebeforecreate", function () {
+
+    app.signinController.init();
+
+    app.signinController.$btnsigninSubmit.off("tap").on("tap", function () {
+        app.signinController.onSigninCommand();
     });
 
 });
