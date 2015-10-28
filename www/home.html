@@ -13,6 +13,31 @@
 	<link rel="stylesheet" type="text/css" href="css/jqm-icon-pack-fa.css" />
     <title>FitCommunity</title>
 	<style>
+		/* Swipe works with mouse as well but often causes text selection. */
+		#demo-page * {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+		/* Arrow only buttons in the header. */
+		#demo-page .ui-header .ui-btn {
+			background: none;
+			border: none;
+			top: 9px;
+		}
+		#demo-page .ui-header .ui-btn-inner {
+			border: none;
+		}
+		/* Content styling. */
+		dl { font-family: "Times New Roman", Times, serif; padding: 1em; }
+		dt { font-size: 2em; font-weight: bold; }
+		dt span { font-size: .5em; color: #777; margin-left: .5em; }
+		dd { font-size: 1.25em;	margin: 1em 0 0; padding-bottom: 1em; border-bottom: 1px solid #eee; }
+		.back-btn { float: right; margin: 0 2em 1em 0; }
+	</style>
+	<style>
 		.button-fit:focus {
 			-moz-box-shadow: inset 0 0 3px red  , 0 0 9px red !important;
 			-webkit-box-shadow: inset 0 0 3px red  , 0 0 9px red !important;
@@ -20,18 +45,33 @@
 		}
 	</style>
 </head>
-<body>
+<body class="home">
 
-	<!-- Index -->
-	<div data-role="page" data-theme="b" id="page-index">
+	<div data-role="page" id="demo-page" data-theme="d" id="page-index">
+
+		<div data-role="header" data-theme="d">
+			<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc"></a>
+		</div>
+
 		<div data-role="content" role="main" class="ui-content">
-			<img src="img/logo.png" class="logo" />
-			<div class="content-primary">
-				Welcome to Homepage <strong><span id="name"></span></strong>
+			<img src="img/logo-hp.png" class="logo4" />
+			<div class="content-primary4">
+				
 			</div>
 		</div>
-    </div>
-	<!-- End of Index -->
+
+		<div data-role="panel" id="left-panel" data-theme="b">
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;" class="nav-search font-thin">
+				<li data-icon="delete" style="background-color:#111;"><a href="#" data-rel="close">&nbsp;</a></li>
+				<li><a href="" class="font-thin">Account Settings</a></li>
+				<li><a href="" class="font-thin">Payment</a></li>
+				<li><a href="" class="font-thin">Privacy</a></li>
+				<li><a href="" class="font-thin">Terms and Conditions</a></li>
+				<li><a href="" class="font-thin">Contact Us</a></li>
+				<li><a href="" class="font-thin">Logout</a></li>
+			</ul>
+		</div>
+	</div>
  
     <script src="lib/fastclick/fastclick.min.js"></script>
     <script src="lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
@@ -41,7 +81,21 @@
 	
 	<script>
 		var value = window.sessionStorage.getItem("name");
-		document.getElementById("name").innerHTML = value;
+		if (value == null){
+			window.location = "index.html";
+		}
 	</script>
+	
+	<script>
+		$( document ).on( "pageinit", "#demo-page", function() {
+			$( document ).on("swiperight", "#demo-page", function( e ) {
+				if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+					if ( e.type === "swiperight" ) {
+						$( "#left-panel" ).panel( "open" );
+					}
+				}
+			});
+		});
+    </script>
 </body>
 </html>

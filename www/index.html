@@ -19,8 +19,14 @@
 			box-shadow: inset 0 0 3px red  , 0 0 9px red !important;
 		}
 	</style>
+	<script>
+		var value = window.sessionStorage.getItem("name");
+		if (value != null){
+			window.location = "home.html";
+		}
+	</script>
 </head>
-<body>
+<body class="intro">
 	<!-- Index -->
 	<div data-role="page" data-theme="b" id="page-index">
 		<div data-role="content" role="main" class="ui-content">

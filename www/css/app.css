@@ -9,7 +9,7 @@
     background: transparent !important;
 }
 
-body, .ui-overlay-c {
+.intro, .ui-overlay-c {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -19,6 +19,18 @@ body, .ui-overlay-c {
     height:100%;
 	width:100%;
 }
+
+.home, .ui-overlay-c {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background: url('../img/intro-hp.png') repeat center bottom !important;
+    background-attachment:fixed !important;
+    background-size:100% 100% !important;
+    height:100%;
+	width:100%;
+}
+
 h1,h2,h3,h4,h5 {
     color:#0071bc;
 }
@@ -99,6 +111,9 @@ h3.mc-text-danger  {
 	/* register_with_email.html */
 	.content-primary3{margin-top: 30px;}
 	.logo3{margin-top:10px;width: 100%;}
+	
+	.content-primary4{margin-top: 40px;}
+	.logo4{margin-top:30px;width: 100%;}
 }
 /* landscape */
 @media screen and (orientation:landscape) {
@@ -113,5 +128,8 @@ h3.mc-text-danger  {
 	/* register_with_email.html */
 	.content-primary3{margin-top: 30px;}
 	.logo3{margin-top:10px;width: 100%;}
+	
+	.content-primary4{margin-top: 40px;}
+	.logo4{margin-top:30px;width: 100%;}
 }
 
