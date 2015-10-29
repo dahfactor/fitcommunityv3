@@ -20,7 +20,7 @@
 	width:100%;
 }
 
-.home, .ui-overlay-c {
+.home, .ui-body-d, .ui-overlay-c {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -29,6 +29,10 @@
     background-size:100% 100% !important;
     height:100%;
 	width:100%;
+}
+
+.menu {
+	width: 35%;
 }
 
 h1,h2,h3,h4,h5 {

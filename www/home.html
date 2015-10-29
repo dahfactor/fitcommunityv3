@@ -6,9 +6,10 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 	<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=medium-dpi" />
-    <link href="css/themes/2/bookit.min.css" rel="stylesheet" />
-    <link href="css/themes/2/jquery.mobile.icons.min.css" rel="stylesheet" />
-    <link href="lib/jqm/1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
+    <!--<link href="css/themes/2/bookit.min.css" rel="stylesheet" />-->
+	<link href="lib/jqm/1.4.5/jquery.mobile-1.3.0-beta.1.css" rel="stylesheet" />
+    <!--<link href="css/themes/2/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="lib/jqm/1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />-->
     <link rel="stylesheet" type="text/css" href="css/app.css" />
 	<link rel="stylesheet" type="text/css" href="css/jqm-icon-pack-fa.css" />
     <title>FitCommunity</title>
@@ -44,24 +45,45 @@
 			box-shadow: inset 0 0 3px red  , 0 0 9px red !important;
 		}
 	</style>
+	<style>
+		/* stack all grids below 40em (640px) */
+		@media all and (max-width: 35em) {
+			.my-breakpoint .ui-block-a, 
+			.my-breakpoint .ui-block-b, 
+			.my-breakpoint .ui-block-c,
+			.my-breakpoint .ui-block-d,
+			.my-breakpoint .ui-block-e { 
+				width: 100%; 
+				float:none; 
+			}
+		}
+		.ui-body-d {
+			background-color: #FFFFFF;
+			border-style: none; 
+		}
+	</style>
 </head>
 <body class="home">
 
 	<div data-role="page" id="demo-page" data-theme="d" id="page-index">
 
 		<div data-role="header" data-theme="d">
-			<a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc"></a>
+			<a href="#left-panel" data-theme="d" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc"></a>
 		</div>
 
 		<div data-role="content" role="main" class="ui-content">
 			<img src="img/logo-hp.png" class="logo4" />
 			<div class="content-primary4">
-				
+				<div class="ui-grid-b my-breakpoint">
+					<div class="ui-block-a"><div class="ui-body ui-body-d">&nbsp;&nbsp;&nbsp;<img src="img/workout.png" class="menu" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/personal_training.png" class="menu" /></div></div>
+					<div class="ui-block-b"><div class="ui-body ui-body-d">&nbsp;&nbsp;&nbsp;<img src="img/statistics.png" class="menu" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/nutrition.png" class="menu" /></div></div>
+					<div class="ui-block-c"><div class="ui-body ui-body-d">&nbsp;&nbsp;&nbsp;<img src="img/community.png" class="menu" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/promotions.png" class="menu" /></div></div>
+				</div>
 			</div>
 		</div>
 
-		<div data-role="panel" id="left-panel" data-theme="b">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;" class="nav-search font-thin">
+		<div data-role="panel" id="left-panel" data-theme="a">
+			<ul data-role="listview" data-theme="a" data-divider-theme="b" style="margin-top:-16px;" class="nav-search font-thin">
 				<li data-icon="delete" style="background-color:#111;"><a href="#" data-rel="close">&nbsp;</a></li>
 				<li><a href="" class="font-thin">Account Settings</a></li>
 				<li><a href="" class="font-thin">Payment</a></li>
@@ -74,10 +96,10 @@
 	</div>
  
     <script src="lib/fastclick/fastclick.min.js"></script>
-    <script src="lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
+    <script src="lib/jquery/2.1.1/jquery-1.7.1.min.js"></script>
     <script src="js/settings.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script src="lib/jqm/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="lib/jqm/1.4.5/jquery.mobile-1.3.0-beta.1.js"></script>
 	
 	<script>
 		var value = window.sessionStorage.getItem("name");
@@ -85,17 +107,5 @@
 			window.location = "index.html";
 		}
 	</script>
-	
-	<script>
-		$( document ).on( "pageinit", "#demo-page", function() {
-			$( document ).on("swiperight", "#demo-page", function( e ) {
-				if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-					if ( e.type === "swiperight" ) {
-						$( "#left-panel" ).panel( "open" );
-					}
-				}
-			});
-		});
-    </script>
 </body>
 </html>
