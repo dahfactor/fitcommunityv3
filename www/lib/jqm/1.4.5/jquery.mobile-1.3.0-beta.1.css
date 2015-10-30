@@ -466,13 +466,6 @@
 	border: 1px solid 		#bbb /*{d-body-border}*/;
 	color: 					#333 /*{d-body-color}*/;
 	text-shadow: 0 /*{d-body-shadow-x}*/ 1px /*{d-body-shadow-y}*/ 0 /*{d-body-shadow-radius}*/ 	#fff /*{d-body-shadow-color}*/;
-	background: 			#fff /*{d-body-background-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #fff /*{d-body-background-start}*/), to( #fff /*{d-body-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( #fff /*{d-body-background-start}*/, #fff /*{d-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #fff /*{d-body-background-start}*/, #fff /*{d-body-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #fff /*{d-body-background-start}*/, #fff /*{d-body-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #fff /*{d-body-background-start}*/, #fff /*{d-body-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( #fff /*{d-body-background-start}*/, #fff /*{d-body-background-end}*/);
 }
 .ui-overlay-d {
 	background-image: none;
