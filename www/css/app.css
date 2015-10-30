@@ -20,11 +20,11 @@
 	width:100%;
 }
 
-.home, .ui-body-d, .ui-overlay-c {
+.ui-body-d {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background: url('../img/intro-hp.png') no-repeat center bottom !important;
+    background: url('../img/intro-hp.png') repeat center bottom !important;
     background-attachment:fixed !important;
     background-size:100% 100% !important;
     height:100%;
