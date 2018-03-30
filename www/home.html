@@ -46,12 +46,12 @@
 		}
 	</style>
 </head>
-<body class="home">
+<body class="intro">
 
 	<div data-role="page" id="demo-page" data-theme="d" id="page-index">
 
 		<div data-role="header" data-theme="d">
-			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-theme="d" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Menu</a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-theme="d" data-shadow="false" data-iconshadow="false" class="ui-icon-caret-1-w">Menu</a>
 		</div>
 
 		<div data-role="content" role="main" class="ui-content">
@@ -69,9 +69,67 @@
 					</li>
 					<li><a href="#panel-fixed-page2">Candidates</a></li>
 					<li><a href="#panel-fixed-page2">Result</a></li>
-					<li><a href="#panel-fixed-page2">Contacts</a></li>
-					<li><a href="#panel-fixed-page2">About</a></li>
-					<li><a href="#panel-fixed-page2">Logout</a></li>
+					<li><a href="#page-contacts">Contacts</a></li>
+					<li><a href="#page-about">About</a></li>
+					<li><a onclick="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" data-theme="d" id="page-about">
+
+		<div data-role="header" data-theme="d">
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-theme="d" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Menu</a>
+		</div>
+
+		<div data-role="content" role="main" class="ui-content">
+			<img src="img/about.png" class="logo4" />
+			<div class="content-primary4">
+				<center><h3>Manilyn Gubaton</h3></center>
+				<center><h3>Shairah Mae Dinaga</h3></center>
+				<center><h3>Mary Claire Visca</h3></center>
+				<center><h3>Livy May Abao</h3></center>
+				<center><h3>Rey Mark Calay</h3></center>
+			</div>
+		</div>
+
+		<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+			<ul data-role="listview">
+					<li style="height: 150px;">
+						<img src="img/logo_ver2.png" style="margin-left: auto;margin-right: auto;position: static;width: 51%;" class="logo" />
+					</li>
+					<li><a href="#panel-fixed-page2">Candidates</a></li>
+					<li><a href="#panel-fixed-page2">Result</a></li>
+					<li><a href="#page-contacts">Contacts</a></li>
+					<li><a href="#page-about" data-rel="close">About</a></li>
+					<li><a onclick="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" data-theme="d" id="page-contacts">
+
+		<div data-role="header" data-theme="d">
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-theme="d" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Menu</a>
+		</div>
+
+		<div data-role="content" role="main" class="ui-content">
+			<img src="img/contacts.png" class="logo4" />
+			<div class="content-primary4">
+				<center><h3>iitso.voting.system@android.com</h3></center>
+			</div>
+		</div>
+
+		<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+			<ul data-role="listview">
+					<li style="height: 150px;">
+						<img src="img/logo_ver2.png" style="margin-left: auto;margin-right: auto;position: static;width: 51%;" class="logo" />
+					</li>
+					<li><a href="#panel-fixed-page2">Candidates</a></li>
+					<li><a href="#panel-fixed-page2">Result</a></li>
+					<li><a href="#page-contacts" data-rel="close">Contacts</a></li>
+					<li><a href="#page-about">About</a></li>
+					<li><a onclick="logout()">Logout</a></li>
 			</ul>
 		</div>
 	</div>
@@ -97,8 +155,8 @@
 					</li>
 					<li><a href="#panel-fixed-page2">Candidates</a></li>
 					<li><a href="#panel-fixed-page2">Result</a></li>
-					<li><a href="#panel-fixed-page2">Contacts</a></li>
-					<li><a href="#panel-fixed-page2">About</a></li>
+					<li><a href="#page-contacts">Contacts</a></li>
+					<li><a href="#page-about">About</a></li>
 					<li><a onclick="logout()">Logout</a></li>
 			</ul>
 		</div>
