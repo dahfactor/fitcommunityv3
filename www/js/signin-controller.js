@@ -17,11 +17,6 @@ BookIt.SignInController.prototype.init = function () {
 	this.$txtPasswordSign_In = $("#password-signin", this.$signInPage);
 };
 
-BookIt.SignInController.prototype.emailAddressIsValid = function (email_signin) {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email_signin);
-};
-
 BookIt.SignInController.prototype.resetSignInForm = function () {
 
     var invisibleStyle = "bi-invisible",
@@ -69,14 +64,6 @@ BookIt.SignInController.prototype.onSigninCommand = function () {
         return;
     }
 
-    if (!me.emailAddressIsValid(emailsignin)) {
-        me.$ctnsigninErr.html("<p>Error: Please enter a valid email address!</p>");
-        me.$ctnsigninErr.addClass("bi-ctn-err").slideDown();
-        me.$txtEmail.addClass(invalidInputStyle);
-		$('html, body').animate({ scrollTop: 0 }, 'slow');
-        return;
-    }
-
     $.ajax({
         type: 'POST',
         url: BookIt.Settings.signInUrl,
@@ -86,7 +73,7 @@ BookIt.SignInController.prototype.onSigninCommand = function () {
         success: function (data) {
 			console.log(data.status);
 			if(data.status == 0){
-				me.$ctnsigninErr.html("<p>Error: Incorrect Email or Password!</p>");
+				me.$ctnsigninErr.html("<p>Error: Incorrect Student Number or Password!</p>");
 				me.$ctnsigninErr.addClass("bi-ctn-err").slideDown();
 				me.$txtEmail.addClass(invalidInputStyle);
 				me.$txtPasswordSign_In.addClass(invalidInputStyle);

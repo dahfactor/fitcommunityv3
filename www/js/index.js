@@ -32,41 +32,21 @@ app.initialize();
 // End boilerplate code.
 
 $(document).on("mobileinit", function (event, ui) {
-    $.mobile.defaultPageTransition = "slide";
+    $.mobile.defaultPageTransition = "fade";
 });
 
-app.signupController = new BookIt.SignUpController();
 app.signinController = new BookIt.SignInController();
 
-
-//$(document).delegate("#page-signup", "pagebeforeshow", function () {
-//    // Reset the signup form.
-//    app.signupController.resetSignUpForm();
-//});
 
 $(document).on("pagecontainerbeforeshow", function (event, ui) {
     if (typeof ui.toPage == "object") {
         switch (ui.toPage.attr("id")) {
-            case "page-signup-email":
-                // Reset the signup form.
-                app.signupController.resetSignUpForm();
-                break;
 			case "page-signin":
                 // Reset the signin form.
                 app.signinController.resetSignInForm();
                 break;
         }
     }
-});
-
-$(document).delegate("#page-signup-email", "pagebeforecreate", function () {
-
-    app.signupController.init();
-
-    app.signupController.$btnSubmit.off("tap").on("tap", function () {
-        app.signupController.onSignupCommand();
-    });
-
 });
 
 $(document).delegate("#page-signin", "pagebeforecreate", function () {

@@ -1,14 +1,14 @@
 <?php 
 header('Content-type: application/json');
-//$server = "localhost";
-//$username = "root";
-//$password = "";
-//$database = "fitcommunity";
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "fitcommunity";
 
-$server = "mysql.dfactor.impactsw.com";
-$database = "itr_dfactor";
-$username = "dfactor";
-$password = "daryl2@12";
+//$server = "mysql.dfactor.impactsw.com";
+//$database = "itr_dfactor";
+//$username = "dfactor";
+//$password = "daryl2@12";
 
 $con = mysql_connect($server, $username, $password) or die ("Could not connect: " . mysql_error());
 mysql_select_db($database, $con);
