@@ -94,12 +94,12 @@ h3.mc-text-danger  {
 /* portrait */
 @media screen and (orientation:portrait) {
 	/* index.html */
-	.content-primary{margin-top: 100px;}
+	.content-primary{margin-top: 70px;}
 	.logo{margin-top:65px;width: 70%;display: block;
     margin-left: auto;
     margin-right: auto;}
 	
-	.titlevoting {margin-top:-60px;margin-bottom:170px;}
+	.titlevoting {margin-top:-60px;margin-bottom:30px;}
 	
 	/* register.html */
 	.content-primary2{margin-top: 140px;}
@@ -109,7 +109,7 @@ h3.mc-text-danger  {
 	.content-primary3{margin-top: 30px;}
 	.logo3{margin-top:10px;width: 100%;}
 	
-	.content-primary4{margin-top: 60px;}
+	.content-primary4{margin-top: 30px;}
 	.logo4{margin-top:30px;width: 100%;}
 }
 /* landscape */
