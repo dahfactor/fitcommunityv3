@@ -79,9 +79,17 @@ BookIt.SignInController.prototype.onSigninCommand = function () {
 				me.$txtPasswordSign_In.addClass(invalidInputStyle);
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 				return;
+			}else if (data.status == 2){
+				me.$ctnsigninErr.html("<p>You've already voted!</p>");
+				me.$ctnsigninErr.addClass("bi-ctn-err").slideDown();
+				me.$txtEmail.addClass(invalidInputStyle);
+				me.$txtPasswordSign_In.addClass(invalidInputStyle);
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
+				return;
 			}else{
 				window.sessionStorage.setItem("loggedIn", 1);
 				window.sessionStorage.setItem("name", data.name);
+				window.sessionStorage.setItem("id", data.id);
 				window.location = "home.html";
 				return;
 			}

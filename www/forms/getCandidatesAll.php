@@ -11,20 +11,20 @@
 	if (!$con) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	
-	$id = $_POST['id'];
 
-	$sql = "SELECT candidates.PositionID, candidates.CandidateID, candidates.Name, position.Position FROM candidates INNER JOIN position on position.PositionID = candidates.PositionID where candidates.PositionID = ".$id;
+	$sql = "SELECT * FROM candidates INNER JOIN position on position.PositionID = candidates.PositionID order by candidates.CandidateID ASC";
 	$result = mysqli_query($con,$sql);
 	
 	$arr = array();
 
 	while( $row = mysqli_fetch_array($result) ){
 		$pos = $row['Position'];
-		$id = $row['CandidateID'];
 		$name = $row['Name'];
+		$year = $row['Year'];
+		$block = $row['Block'];
+		$votes = $row['Votes'];
 		
-		$arr[] = array("id" => $id, "name" => $name, "pos" => $pos);
+		$arr[] = array("pos" => $pos, "name" => $name, "year" => $year, "block" => $block, "votes" => $votes);
 	}
 
 	// encoding array to json format

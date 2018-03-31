@@ -1,9 +1,9 @@
 <?php
 	header('Content-type: application/json');
 	$server = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "iitvoting";
+	$username = "rsusuppl_rsu";
+	$password = "rsusupply2018";
+	$database = "rsusuppl_iitvoting";
 
 	$con = mysqli_connect($server, $username, $password, $database);
 	

@@ -48,17 +48,17 @@
 </head>
 <body class="intro">
 
-	<div data-role="page" id="demo-page" data-theme="d" id="page-index">
+	<div data-role="page" data-theme="d" id="page-index">
 
 		<div data-role="header" data-theme="d">
-			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-theme="d" data-shadow="false" data-iconshadow="false" class="ui-icon-caret-1-w">Menu</a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-theme="d" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Menu</a>
 		</div>
 
 		<div data-role="content" role="main" class="ui-content">
 			<img src="img/main.png" class="logo4" />
 			<div class="content-primary4">
 				<center><h1>Click here to vote</h1></center>
-				<a href="#page-vote" class="ui-btn ui-btn-b button-fit ui-corner-all" style="background-color: black;color: white;text-decoration: none;">VOTE</a>
+				<a href="#page-vote" onclick="checkelectionstatus()" class="ui-btn ui-btn-b button-fit ui-corner-all" style="background-color: black;color: white;text-decoration: none;">VOTE</a>
 			</div>
 		</div>
 
@@ -67,8 +67,8 @@
 					<li style="height: 150px;">
 						<img src="img/logo_ver2.png" style="margin-left: auto;margin-right: auto;position: static;width: 51%;" class="logo" />
 					</li>
-					<li><a href="#panel-fixed-page2">Candidates</a></li>
-					<li><a href="#panel-fixed-page2">Result</a></li>
+					<li><a href="#page-vote">Vote Now!</a></li>
+					<li><a href="#page-candidate" onclick="fetchcandidate()">Candidates</a></li>
 					<li><a href="#page-contacts">Contacts</a></li>
 					<li><a href="#page-about">About</a></li>
 					<li><a onclick="logout()">Logout</a></li>
@@ -98,8 +98,8 @@
 					<li style="height: 150px;">
 						<img src="img/logo_ver2.png" style="margin-left: auto;margin-right: auto;position: static;width: 51%;" class="logo" />
 					</li>
-					<li><a href="#panel-fixed-page2">Candidates</a></li>
-					<li><a href="#panel-fixed-page2">Result</a></li>
+					<li><a href="#page-vote">Vote Now!</a></li>
+					<li><a href="#page-candidate" onclick="fetchcandidate()">Candidates</a></li>
 					<li><a href="#page-contacts">Contacts</a></li>
 					<li><a href="#page-about" data-rel="close">About</a></li>
 					<li><a onclick="logout()">Logout</a></li>
@@ -125,9 +125,48 @@
 					<li style="height: 150px;">
 						<img src="img/logo_ver2.png" style="margin-left: auto;margin-right: auto;position: static;width: 51%;" class="logo" />
 					</li>
-					<li><a href="#panel-fixed-page2">Candidates</a></li>
-					<li><a href="#panel-fixed-page2">Result</a></li>
+					<li><a href="#page-vote">Vote Now!</a></li>
+					<li><a href="#page-candidate" onclick="fetchcandidate()">Candidates</a></li>
 					<li><a href="#page-contacts" data-rel="close">Contacts</a></li>
+					<li><a href="#page-about">About</a></li>
+					<li><a onclick="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" data-theme="d" id="page-candidate">
+
+		<div data-role="header" data-theme="d">
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-theme="d" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Menu</a>
+		</div>
+
+		<div data-role="content" role="main" class="ui-content">
+			<img src="img/candidates.png" class="logo4" />
+			<div class="content-primary4" id="selectdiv2">
+				<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+					<thead>
+						<tr>
+							<th data-priority="2">Position</th>
+							<th>Name</th>
+							<th data-priority="3">Year</th>
+							<th data-priority="1">Block</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
+			<ul data-role="listview">
+					<li style="height: 150px;">
+						<img src="img/logo_ver2.png" style="margin-left: auto;margin-right: auto;position: static;width: 51%;" class="logo" />
+					</li>
+					<li><a href="#page-vote">Vote Now!</a></li>
+					<li><a href="#page-candidate" data-rel="close" onclick="fetchcandidate()">Candidates</a></li>
+					<li><a href="#page-contacts">Contacts</a></li>
 					<li><a href="#page-about">About</a></li>
 					<li><a onclick="logout()">Logout</a></li>
 			</ul>
@@ -142,10 +181,12 @@
 
 		<div data-role="content" role="main" class="ui-content">
 			<img src="img/vote.png" class="logo4" />
-			<div class="content-primary4" id="selectdiv">
-				
-			</div>
-			<a href="#page-vote" class="ui-btn ui-btn-b button-fit ui-corner-all" style="background-color: black;color: white;text-decoration: none;">SUBMIT</a>
+				<form>
+					<div class="content-primary4 ui-field-contain" id="selectdiv">
+						<input type="hidden" name="idhidden" id="idhidden"/>
+					</div>
+					<input type="button" name="submit" id="submit" value="SUBMIT" />
+				</form>
 		</div>
 
 		<div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
@@ -153,8 +194,8 @@
 					<li style="height: 150px;">
 						<img src="img/logo_ver2.png" style="margin-left: auto;margin-right: auto;position: static;width: 51%;" class="logo" />
 					</li>
-					<li><a href="#panel-fixed-page2">Candidates</a></li>
-					<li><a href="#panel-fixed-page2">Result</a></li>
+					<li><a href="#page-vote" data-rel="close">Vote Now!</a></li>
+					<li><a href="#page-candidate" onclick="fetchcandidate()">Candidates</a></li>
 					<li><a href="#page-contacts">Contacts</a></li>
 					<li><a href="#page-about">About</a></li>
 					<li><a onclick="logout()">Logout</a></li>
@@ -170,6 +211,9 @@
 	
 	<script>
 		var value = window.sessionStorage.getItem("name");
+		var id = window.sessionStorage.getItem("id");
+		$("#idhidden").val(id);
+		
 		if (value == null){
 			window.location = "index.html";
 		}
@@ -182,9 +226,82 @@
 			}
 		}
 		
+		function checkelectionstatus(){
+			$.ajax({
+				url: 'http://rsusupplyinventory.com/checkResultStatus.php',
+				type: 'post',
+				//data: {id:id},
+				dataType: 'json',
+				success:function(response){
+					if (response[0].flag == 1){
+						alert("Message: No active IITSO election!");
+						window.location.href = "#page-index";
+					}
+				}
+			});
+		}
+		
+		$(function () {
+			$( "#submit" ).click(function(e) {
+				e.preventDefault();
+				
+				$.ajax({
+					url: 'http://rsusupplyinventory.com/checkResultStatus.php',
+					type: 'post',
+					//data: {id:id},
+					dataType: 'json',
+					success:function(response){
+						if (response[0].flag == 1){
+							alert("Message: No active IITSO election!");
+							window.location.href = "#page-index";
+						}else{
+							var r = confirm("Do you want to submit your votes?");
+							if (r == true){
+								$.ajax({
+									url: 'http://rsusupplyinventory.com/PostSubmit.php',
+									type: 'post',
+									data: $("form").serialize(),
+									//dataType: 'json',
+									success: function (data) {
+										alert("Your vote counts! Thank you!");
+										window.sessionStorage.removeItem("name");
+										window.location = "index.html";
+									}
+								 });
+							}
+						}
+					}
+				});
+			})
+		})
+		
+		function fetchcandidate(){
+			$("#table-column-toggle tbody tr").remove();
+			$.ajax({
+				url: 'http://rsusupplyinventory.com/getCandidatesAll.php',
+				type: 'post',
+				//data: {id:id},
+				dataType: 'json',
+				success:function(response){
+					
+					//Create and append the options
+					for (var i = 0; i < response.length; i++) {
+					
+						$('#table-column-toggle > tbody:last-child').append(
+						'<tr>'// need to change closing tag to an opening `<tr>` tag.
+						+'<td>'+response[i].pos+'</td>'
+						+'<td>'+response[i].name+'</td>'
+						+'<td>'+response[i].year+'</td>'
+						+'<td>'+response[i].block+'</td>'
+						+'</tr>');
+					
+					}
+				}});
+		}
+		
 		$(document).ready(function(){
 			$.ajax({
-				url: 'http://192.168.22.6/www/forms/getPosition.php',
+				url: 'http://rsusupplyinventory.com/getPosition.php',
 				type: 'get',
 				//data: {depart:deptid},
 				dataType: 'json',
@@ -195,45 +312,59 @@
 						var id = response[i]['id'];
 						var positionname = response[i]['position_name'];
 						
+						//alert("Data Loading....");
+						
 						$.ajax({
-						url: 'http://192.168.22.6/www/forms/getCandidates.php',
+						url: 'http://rsusupplyinventory.com/getCandidates.php',
 						type: 'post',
 						data: {id:id},
 						dataType: 'json',
 						success:function(response){
 						
-							var myDiv = document.getElementById("selectdiv");
+							if (response.length != 0){
+						
+								var myDiv = document.getElementById("selectdiv");
 
-							//Create and append select list
-							var selectList = document.createElement("select");
-							selectList.setAttribute("id", "select-native-1");
-							
-							myDiv.appendChild(selectList);
-							
-							var optiondef = document.createElement("option");
-
-							//Create and append the options
-							for (var i = 0; i < response.length; i++) {
-							
-								/*if (i == 0){
-									var header = document.getElementById("selectdiv"),
-									h4 = document.createElement("h4");
-									h4.setAttribute("id", "myH4");
-
-									h4.textContent = response[i].pos;
-									header.appendChild(h4);
-								}*/
-							
-								var option = document.createElement("option");
-								option.setAttribute("value", response[i].id);
-								option.text = response[i].pos + ": " + response[i].name;
-								selectList.appendChild(option);
+								//Create and append select list
+								var selectList = document.createElement("select");
+								//selectList.setAttribute("id", "select-native-1");
+								selectList.setAttribute("name", "selcandidates[]");
+								selectList.setAttribute("style", "width:100%; height:80px;font-size:18px;");
+								//id + $('select').size()
 								
-								if (i < response.length){
-									optiondef.setAttribute("selected", "selected");
-									//optiondef.setAttribute("disabled", "disabled");
-									optiondef.text = "Choose your " + response[i].pos;
-									selectList.insertBefore(optiondef, selectList.childNodes[0]);
+								var br = document.createElement("br");
+								myDiv.appendChild(br);
+								var br2 = document.createElement("br");
+								myDiv.appendChild(br2);
+								
+								myDiv.appendChild(selectList);
+								
+								var optiondef = document.createElement("option");
+
+								//Create and append the options
+								for (var i = 0; i < response.length; i++) {
+								
+									/*if (i == 0){
+										var header = document.getElementById("selectdiv"),
+										h4 = document.createElement("h4");
+										h4.setAttribute("id", "myH4");
+
+										h4.textContent = response[i].pos;
+										header.appendChild(h4);
+									}*/
+								
+									var option = document.createElement("option");
+									option.setAttribute("value", response[i].id);
+									option.text = response[i].pos + ": " + response[i].name;
+									selectList.appendChild(option);
+									
+									if (i < response.length){
+										optiondef.setAttribute("selected", "selected");
+										//optiondef.setAttribute("disabled", "disabled");
+										optiondef.setAttribute("value", "0");
+										optiondef.text = "Choose your " + response[i].pos;
+										selectList.insertBefore(optiondef, selectList.childNodes[0]);
+									}
 								}
 							}
 						}});

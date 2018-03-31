@@ -1,9 +1,9 @@
 <?php 
 header('Content-type: application/json');
 $server = "localhost";
-$username = "root";
-$password = "";
-$database = "iitvoting";
+$username = "rsusuppl_rsu";
+$password = "rsusupply2018";
+$database = "rsusuppl_iitvoting";
 
 //$server = "mysql.dfactor.impactsw.com";
 //$database = "itr_dfactor";
@@ -25,9 +25,15 @@ $sqlcheckcount = mysql_num_rows($sqlcheck);
 
 if ($sqlcheckcount == 1){
 	$row = mysql_fetch_row($sqlcheck);
-	$response_array['status'] = 1;  
-	$response_array['name'] = $row[2];
-	echo json_encode($response_array);
+	if ($row[5] == 0){
+		$response_array['status'] = 1;  
+		$response_array['name'] = $row[2];
+		$response_array['id'] = $row[0];
+		echo json_encode($response_array);
+	}else if ($row[5] == 1){
+		$response_array['status'] = 2;  
+		echo json_encode($response_array);
+	}
 }else{
 	$response_array['status'] = 0;  
 	echo json_encode($response_array);
